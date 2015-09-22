@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ASCII"?>
+<graphicR:GraphicRepresentation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:graphicR="http://mondo.org/graphic_representation/1.0">
+  <allGraphicRepresentation extension="figcom">
+    <elements xsi:type="graphicR:Node">
+      <anEClass href="WindTurbines.ecore#//InPort"/>
+      <diag_palette palette_name="Create InPort"/>
+      <containerReference href="WindTurbines.ecore#//Component/ports"/>
+      <node_elements>
+        <LabelanEAttribute href="WindTurbines.ecore#//Port/name"/>
+      </node_elements>
+      <node_shape xsi:type="graphicR:Ellipse"/>
+    </elements>
+    <elements xsi:type="graphicR:Node">
+      <anEClass href="WindTurbines.ecore#//OutPort"/>
+      <diag_palette palette_name="Create OutPort"/>
+      <containerReference href="WindTurbines.ecore#//Component/ports"/>
+      <node_elements>
+        <LabelanEAttribute href="WindTurbines.ecore#//Port/name"/>
+      </node_elements>
+      <node_shape xsi:type="graphicR:Ellipse"/>
+    </elements>
+    <root>
+      <anEClass href="WindTurbines.ecore#//Component"/>
+    </root>
+  </allGraphicRepresentation>
+  <allGraphicRepresentation extension="state">
+    <elements xsi:type="graphicR:Edge">
+      <anEClass href="WindTurbines.ecore#//Edge"/>
+      <diag_palette palette_name="Create Edge"/>
+      <containerReference href="WindTurbines.ecore#//StateMachine/transitions"/>
+      <directions>
+        <sourceLink anDiagramElement="//@allGraphicRepresentation.1/@elements.1 //@allGraphicRepresentation.1/@elements.2">
+          <anEReference href="WindTurbines.ecore#//Edge/source"/>
+        </sourceLink>
+        <targetLink anDiagramElement="//@allGraphicRepresentation.1/@elements.1 //@allGraphicRepresentation.1/@elements.2">
+          <anEReference href="WindTurbines.ecore#//Edge/target"/>
+        </targetLink>
+      </directions>
+    </elements>
+    <elements xsi:type="graphicR:Node">
+      <anEClass href="WindTurbines.ecore#//SimpleState"/>
+      <diag_palette palette_name="Create SimpleState"/>
+      <containerReference href="WindTurbines.ecore#//StateMachine/states"/>
+      <node_elements>
+        <LabelanEAttribute href="WindTurbines.ecore#//DocumElt/name"/>
+      </node_elements>
+      <node_shape xsi:type="graphicR:Ellipse"/>
+    </elements>
+    <elements xsi:type="graphicR:Node">
+      <anEClass href="WindTurbines.ecore#//InitialState"/>
+      <diag_palette palette_name="Create InitialState"/>
+      <containerReference href="WindTurbines.ecore#//StateMachine/states"/>
+      <node_elements>
+        <LabelanEAttribute href="WindTurbines.ecore#//DocumElt/name"/>
+      </node_elements>
+      <node_shape xsi:type="graphicR:Ellipse"/>
+    </elements>
+    <root>
+      <anEClass href="WindTurbines.ecore#//StateMachine"/>
+    </root>
+  </allGraphicRepresentation>
+</graphicR:GraphicRepresentation>

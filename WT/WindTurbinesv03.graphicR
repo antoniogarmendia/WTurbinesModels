@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="ASCII"?>
+<graphicR:GraphicRepresentation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:graphicR="http://mondo.org/graphic_representation/1.0">
+  <allGraphicRepresentation>
+    <elements xsi:type="graphicR:Node">
+      <anEClass href="WindTurbines.ecore#//Component"/>
+      <diag_palette palette_name="Create Component"/>
+      <containerReference href="WindTurbines.ecore#//Subsystem/components"/>
+      <node_elements>
+        <LabelanEAttribute name="id" lowerBound="1">
+          <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </LabelanEAttribute>
+        <LinkanEReference name="ports" ordered="false" upperBound="-1" containment="true">
+          <eType xsi:type="ecore:EClass" href="WindTurbines.ecore#//Port"/>
+        </LinkanEReference>
+      </node_elements>
+    </elements>
+    <elements xsi:type="graphicR:Node" containerReference="//@allGraphicRepresentation.0/@elements.5/@node_elements/@LinkanEReference.0">
+      <anEClass href="WindTurbines.ecore#//StateMachine"/>
+      <diag_palette palette_name="Create StateMachine"/>
+      <node_elements>
+        <LabelanEAttribute name="name" lowerBound="1">
+          <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </LabelanEAttribute>
+        <LinkanEReference name="states" ordered="false" upperBound="-1" containment="true">
+          <eType xsi:type="ecore:EClass" href="WindTurbines.ecore#//Vertex"/>
+        </LinkanEReference>
+        <LinkanEReference name="transitions" ordered="false" upperBound="-1" containment="true">
+          <eType xsi:type="ecore:EClass" href="WindTurbines.ecore#//Edge"/>
+        </LinkanEReference>
+      </node_elements>
+    </elements>
+    <elements xsi:type="graphicR:Edge">
+      <anEClass href="WindTurbines.ecore#//Edge"/>
+      <diag_palette palette_name="123123"/>
+      <directions sourceDiagramElement="//@allGraphicRepresentation.0/@elements.3 //@allGraphicRepresentation.0/@elements.4" targetDiagramElement="//@allGraphicRepresentation.0/@elements.3 //@allGraphicRepresentation.0/@elements.4">
+        <source href="WindTurbines.ecore#//Edge/source"/>
+        <target href="WindTurbines.ecore#//Edge/target"/>
+      </directions>
+    </elements>
+    <elements xsi:type="graphicR:Node">
+      <anEClass href="WindTurbines.ecore#//SimpleState"/>
+      <diag_palette palette_name="Create SimpleState"/>
+      <node_elements>
+        <LabelanEAttribute name="name">
+          <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </LabelanEAttribute>
+      </node_elements>
+      <node_shape xsi:type="graphicR:Ellipse" horizontalDiameter="5" verticalDiameter="5"/>
+    </elements>
+    <elements xsi:type="graphicR:Node">
+      <anEClass href="WindTurbines.ecore#//InitialState"/>
+      <diag_palette palette_name="Create InitialState"/>
+      <node_elements>
+        <LabelanEAttribute name="desc">
+          <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </LabelanEAttribute>
+      </node_elements>
+      <node_shape xsi:type="graphicR:Rectangle" width="3" height="3"/>
+    </elements>
+    <elements xsi:type="graphicR:Node">
+      <anEClass href="WindTurbines.ecore#//ControlSubsystem"/>
+      <diag_palette palette_name="Create ControlSubsystem"/>
+      <containerReference href="WindTurbines.ecore#//Subsystem/beh"/>
+      <node_elements>
+        <LabelanEAttribute name="name">
+          <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </LabelanEAttribute>
+        <LinkanEReference name="machines" ordered="false" upperBound="-1" containment="true">
+          <eType xsi:type="ecore:EClass" href="WindTurbines.ecore#//StateMachine"/>
+        </LinkanEReference>
+      </node_elements>
+    </elements>
+    <elements xsi:type="graphicR:Node">
+      <anEClass href="WindTurbines.ecore#//InPort"/>
+      <diag_palette palette_name="Create InPort"/>
+      <node_elements>
+        <LabelanEAttribute name="name">
+          <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </LabelanEAttribute>
+      </node_elements>
+    </elements>
+    <elements xsi:type="graphicR:Node">
+      <anEClass href="WindTurbines.ecore#//OutPort"/>
+      <diag_palette palette_name="Create OutPort"/>
+      <node_elements/>
+    </elements>
+    <root>
+      <anEClass href="WindTurbines.ecore#//Subsystem"/>
+    </root>
+  </allGraphicRepresentation>
+</graphicR:GraphicRepresentation>

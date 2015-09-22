@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/tree/description/1.0.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" version="8.1.0">
+  <ownedViewpoints name="VpComponent" label="Component" modelFileExtension="figcom">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="DDComponent" domainClass="dslComponent.Component">
+      <defaultLayer name="Default" label="DefaultLayer">
+        <nodeMappings name="IdInPort" semanticCandidatesExpression="feature:ports" domainClass="dslComponent.InPort">
+          <style xsi:type="style:EllipseNodeDescription" horizontalDiameterComputationExpression="3" verticalDiameterComputationExpression="3">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="IdOutPort" semanticCandidatesExpression="feature:ports" domainClass="dslComponent.OutPort">
+          <style xsi:type="style:EllipseNodeDescription" horizontalDiameterComputationExpression="3" verticalDiameterComputationExpression="3">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+          </style>
+        </nodeMappings>
+        <toolSections name="DefaultPalette">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="IdCreationInPort" nodeMappings="//@ownedViewpoints[name='VpComponent']/@ownedRepresentations[name='DDComponent']/@defaultLayer/@nodeMappings[name='IdInPort']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="dslComponent.InPort" referenceName="ports"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="IdCreationOutPort" nodeMappings="//@ownedViewpoints[name='VpComponent']/@ownedRepresentations[name='DDComponent']/@defaultLayer/@nodeMappings[name='IdOutPort']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="dslComponent.OutPort" referenceName="ports"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+  </ownedViewpoints>
+  <ownedViewpoints name="VpStateMachine" label="StateMachine" modelFileExtension="state">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="DDStateMachine" domainClass="dslComponent.StateMachine">
+      <defaultLayer name="Default" label="DefaultLayer">
+        <nodeMappings name="IdSimpleState" semanticCandidatesExpression="feature:states" domainClass="dslComponent.SimpleState">
+          <style xsi:type="style:EllipseNodeDescription" horizontalDiameterComputationExpression="3" verticalDiameterComputationExpression="3">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="IdInitialState" semanticCandidatesExpression="feature:states" domainClass="dslComponent.InitialState">
+          <style xsi:type="style:EllipseNodeDescription" horizontalDiameterComputationExpression="3" verticalDiameterComputationExpression="3">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="IdEdge" semanticCandidatesExpression="[transitions/]" sourceMapping="//@ownedViewpoints[name='VpStateMachine']/@ownedRepresentations[name='DDStateMachine']/@defaultLayer/@nodeMappings[name='IdSimpleState'] //@ownedViewpoints[name='VpStateMachine']/@ownedRepresentations[name='DDStateMachine']/@defaultLayer/@nodeMappings[name='IdInitialState']" targetMapping="//@ownedViewpoints[name='VpStateMachine']/@ownedRepresentations[name='DDStateMachine']/@defaultLayer/@nodeMappings[name='IdSimpleState'] //@ownedViewpoints[name='VpStateMachine']/@ownedRepresentations[name='DDStateMachine']/@defaultLayer/@nodeMappings[name='IdInitialState']" targetFinderExpression="[self.target/]" sourceFinderExpression="[self.source/]" domainClass="dslComponent.Edge" useDomainElement="true">
+          <style>
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <toolSections name="DefaultPalette">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="IdCreationEdge" edgeMappings="//@ownedViewpoints[name='VpStateMachine']/@ownedRepresentations[name='DDStateMachine']/@defaultLayer/@edgeMappings[name='IdEdge']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[source.eContainer(&quot;StateMachine&quot;)/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="dslComponent.Edge" referenceName="transitions">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:source">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="IdCreationSimpleState" nodeMappings="//@ownedViewpoints[name='VpStateMachine']/@ownedRepresentations[name='DDStateMachine']/@defaultLayer/@nodeMappings[name='IdSimpleState']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="dslComponent.SimpleState" referenceName="states"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="IdCreationInitialState" nodeMappings="//@ownedViewpoints[name='VpStateMachine']/@ownedRepresentations[name='DDStateMachine']/@defaultLayer/@nodeMappings[name='IdInitialState']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="dslComponent.InitialState" referenceName="states"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_2:TreeDescription"/>
+  </ownedViewpoints>
+</description:Group>

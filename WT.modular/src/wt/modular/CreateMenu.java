@@ -1,0 +1,98 @@
+package wt.modular;
+
+import java.io.IOException;
+import java.util.HashMap;
+
+import org.eclipse.core.resources.IFolder;
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.runtime.IPath;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.jface.action.MenuManager;
+import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.TreeSelection;
+import org.eclipse.ui.ISelectionService;
+import org.eclipse.ui.menus.CommandContributionItem;
+import org.eclipse.ui.menus.CommandContributionItemParameter;
+import org.eclipse.ui.menus.ExtensionContributionFactory;
+import org.eclipse.ui.menus.IContributionRoot;
+import org.eclipse.ui.services.IServiceLocator;
+
+import dslComponent.Subsystem;
+import dslComponent.ControlSubsystem;
+
+public class CreateMenu extends ExtensionContributionFactory {
+
+	public CreateMenu() {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void createContributionItems(IServiceLocator serviceLocator,
+			IContributionRoot additions) {
+		// TODO Auto-generated method stub
+		
+		ISelectionService serv = (ISelectionService) serviceLocator.getService(ISelectionService.class);
+		ISelection selection = serv.getSelection();
+		TreeSelection treeselection = (TreeSelection)selection;
+		Object firstelement = treeselection.getFirstElement();
+				
+		if(firstelement instanceof IProject || firstelement instanceof IFolder){
+			
+			MenuManager menu = new MenuManager();
+			menu.setMenuText("New WTComponents");			
+			if(firstelement instanceof IProject)
+			{
+				CommandContributionItemParameter psubsystems = new CommandContributionItemParameter(serviceLocator,
+			"", "org.eclipse.ui.newWizard", CommandContributionItem.STYLE_PUSH);
+				psubsystems.parameters = new HashMap<String,String>();
+				psubsystems.parameters.put("newWizardId", "WT.subsystem.subsystemNewPackage");
+				CommandContributionItem itemsubsystems = new CommandContributionItem(psubsystems);
+				menu.add(itemsubsystems);
+				
+			}
+			else if(firstelement instanceof IFolder)
+			{
+				IFolder fol = (IFolder)firstelement;
+				IPath filePath = fol.getFullPath().append("/"+fol.getName().concat(".xmi"));
+				XMI_File file = new XMI_File(URI.createPlatformResourceURI(filePath.toString(), true), true);
+				EObject root = null;
+				try {
+					root = file.Get_Root();
+				} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+				}
+				
+				if(root!=null)
+				{					
+					if(root instanceof Subsystem)
+					{
+						CommandContributionItemParameter pcommand = new CommandContributionItemParameter(serviceLocator,
+						"", "org.eclipse.ui.newWizard", CommandContributionItem.STYLE_PUSH);
+						pcommand.parameters = new HashMap<String,String>();
+							pcommand.parameters.put("newWizardId", "WT.component.componentNewFile");
+							CommandContributionItem itemcomponents = new CommandContributionItem(pcommand);
+							menu.add(itemcomponents);
+							pcommand.parameters.put("newWizardId", "WT.controlsubsystem.controlsubsystemNewPackage");
+							CommandContributionItem itembeh = new CommandContributionItem(pcommand);
+							menu.add(itembeh);
+					}									
+					if(root instanceof ControlSubsystem)
+					{
+						CommandContributionItemParameter pcommand = new CommandContributionItemParameter(serviceLocator,
+						"", "org.eclipse.ui.newWizard", CommandContributionItem.STYLE_PUSH);
+						pcommand.parameters = new HashMap<String,String>();
+							pcommand.parameters.put("newWizardId", "WT.statemachine.statemachineNewFile");
+							CommandContributionItem itemmachines = new CommandContributionItem(pcommand);
+							menu.add(itemmachines);
+					}									
+				}				
+			}
+			additions.addContributionItem(menu, null);
+		}
+	}
+
+				
+}
+

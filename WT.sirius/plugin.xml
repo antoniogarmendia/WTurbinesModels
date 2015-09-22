@@ -1,0 +1,36 @@
+<plugin>
+   <extension
+         point="org.eclipse.ui.editors">
+		
+	<editor
+		name = "Figcom Sirius Model Editor"
+		extensions = "figcom"
+		icon = "icons/sirius_icon.png"
+		launcher="wt.sirius.editor.GraphicalSiriusEditor"
+		id="WT.sirius.projectwtcomponents.editors.FigureEditor"
+		default="false">
+	</editor>
+	<editor
+		name = "State Sirius Model Editor"
+		extensions = "state"
+		icon = "icons/sirius_icon.png"
+		launcher="wt.sirius.editor.GraphicalSiriusEditor"
+		id="WT.sirius.projectwtcomponents.editors.FigureEditor"
+		default="false">
+	</editor>
+   </extension>
+   <extension
+         point="org.modular.sirius.definition.ext">
+      <new_client
+            class="wt.sirius.ext.CreateDesignSiriusProject">
+      </new_client>
+   </extension>
+    <extension
+         point="org.eclipse.sirius.diagram.ui.layoutProvider">
+      <layoutProvider
+            priority="high"
+            providerClass="wt.sirius.editor.SampleLayoutProvider">
+      </layoutProvider>
+   </extension>	
+  
+</plugin>

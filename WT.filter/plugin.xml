@@ -1,0 +1,9 @@
+<plugin>
+   <extension
+         point="org.model.filterui.definition.ext">
+      <client
+            class="wt.filter.ext.FilterViewerPane"></client>
+   </extension>
+
+</plugin>
+

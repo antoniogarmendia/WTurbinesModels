@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="ASCII"?>
+<rtpat:PatternInstances xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dslpat="http://mondo.org/dslPatterns" xmlns:rtpat="http://mondo.org/runtimePatterns" xmlns:servInt_modelingenv="http://mondo.org/serviceInterfaces/modelingenv">
+  <appliedPatterns ident="Modularity">
+    <pattern href="platform:/resource/WT/patterns/repository.dslpatterns#//@categories.4/@patterns.0"/>
+    <classInstances>
+      <role href="platform:/resource/WT/patterns/repository.dslpatterns#//@categories.4/@patterns.0/@rootVariant/@andChildren.0/@metaModel/@classInterfaces.0"/>
+      <element href="WindTurbines.ecore#//WTComponents"/>
+      <featureInstances xsi:type="rtpat:InstanceFeatureRoleInstance" value="icons/Project.png">
+        <role xsi:type="dslpat:FeatureInstance" href="platform:/resource/WT/patterns/repository.dslpatterns#//@categories.4/@patterns.0/@rootVariant/@andChildren.0/@metaModel/@attrInterfaces.5"/>
+      </featureInstances>
+      <featureInstances xsi:type="rtpat:TypeFeatureRoleInstance">
+        <role href="platform:/resource/WT/patterns/repository.dslpatterns#//@categories.4/@patterns.0/@rootVariant/@andChildren.0/@metaModel/@attrInterfaces.0"/>
+        <element href="WindTurbines.ecore#//WTComponents/id"/>
+      </featureInstances>
+      <referenceInstances>
+        <role href="platform:/resource/WT/patterns/repository.dslpatterns#//@categories.4/@patterns.0/@rootVariant/@andChildren.0/@metaModel/@refInterfaces.0"/>
+        <element href="WindTurbines.ecore#//WTComponents/subsystems"/>
+      </referenceInstances>
+    </classInstances>
+    <classInstances>
+      <role href="platform:/resource/WT/patterns/repository.dslpatterns#//@categories.4/@patterns.0/@rootVariant/@andChildren.0/@metaModel/@classInterfaces.1"/>
+      <element href="WindTurbines.ecore#//Subsystem"/>
+      <featureInstances xsi:type="rtpat:InstanceFeatureRoleInstance" value="icons/Subsystem.png">
+        <role xsi:type="dslpat:FeatureInstance" href="platform:/resource/WT/patterns/repository.dslpatterns#//@categories.4/@patterns.0/@rootVariant/@andChildren.0/@metaModel/@attrInterfaces.6"/>
+      </featureInstances>
+      <featureInstances xsi:type="rtpat:TypeFeatureRoleInstance">
+        <role href="platform:/resource/WT/patterns/repository.dslpatterns#//@categories.4/@patterns.0/@rootVariant/@andChildren.0/@metaModel/@attrInterfaces.1"/>
+        <element href="WindTurbines.ecore#//Subsystem/name"/>
+      </featureInstances>
+      <referenceInstances>
+        <role href="platform:/resource/WT/patterns/repository.dslpatterns#//@categories.4/@patterns.0/@rootVariant/@andChildren.0/@metaModel/@refInterfaces.2"/>
+        <element href="WindTurbines.ecore#//Subsystem/components"/>
+      </referenceInstances>
+      <referenceInstances>
+        <role href="platform:/resource/WT/patterns/repository.dslpatterns#//@categories.4/@patterns.0/@rootVariant/@andChildren.0/@metaModel/@refInterfaces.1"/>
+        <element href="WindTurbines.ecore#//Subsystem/beh"/>
+      </referenceInstances>
+    </classInstances>
+    <classInstances>
+      <role href="platform:/resource/WT/patterns/repository.dslpatterns#//@categories.4/@patterns.0/@rootVariant/@andChildren.0/@metaModel/@classInterfaces.2"/>
+      <element href="WindTurbines.ecore#//Component"/>
+      <featureInstances xsi:type="rtpat:InstanceFeatureRoleInstance" value="figcom">
+        <role xsi:type="dslpat:FeatureInstance" href="platform:/resource/WT/patterns/repository.dslpatterns#//@categories.4/@patterns.0/@rootVariant/@andChildren.0/@metaModel/@attrInterfaces.3"/>
+      </featureInstances>
+      <featureInstances xsi:type="rtpat:InstanceFeatureRoleInstance" value="icons/Component.png">
+        <role xsi:type="dslpat:FeatureInstance" href="platform:/resource/WT/patterns/repository.dslpatterns#//@categories.4/@patterns.0/@rootVariant/@andChildren.0/@metaModel/@attrInterfaces.4"/>
+      </featureInstances>
+      <featureInstances xsi:type="rtpat:TypeFeatureRoleInstance">
+        <role href="platform:/resource/WT/patterns/repository.dslpatterns#//@categories.4/@patterns.0/@rootVariant/@andChildren.0/@metaModel/@attrInterfaces.2"/>
+        <element href="WindTurbines.ecore#//Component/name"/>
+      </featureInstances>
+    </classInstances>
+    <classInstances>
+      <role href="platform:/resource/WT/patterns/repository.dslpatterns#//@categories.4/@patterns.0/@rootVariant/@andChildren.0/@metaModel/@classInterfaces.1"/>
+      <element href="WindTurbines.ecore#//ControlSubsystem"/>
+      <featureInstances xsi:type="rtpat:InstanceFeatureRoleInstance" value="icons/ControlSubsystem.png">
+        <role xsi:type="dslpat:FeatureInstance" href="platform:/resource/WT/patterns/repository.dslpatterns#//@categories.4/@patterns.0/@rootVariant/@andChildren.0/@metaModel/@attrInterfaces.6"/>
+      </featureInstances>
+      <featureInstances xsi:type="rtpat:TypeFeatureRoleInstance">
+        <role href="platform:/resource/WT/patterns/repository.dslpatterns#//@categories.4/@patterns.0/@rootVariant/@andChildren.0/@metaModel/@attrInterfaces.1"/>
+        <element href="WindTurbines.ecore#//ControlSubsystem/name"/>
+      </featureInstances>
+      <referenceInstances>
+        <role href="platform:/resource/WT/patterns/repository.dslpatterns#//@categories.4/@patterns.0/@rootVariant/@andChildren.0/@metaModel/@refInterfaces.2"/>
+        <element href="WindTurbines.ecore#//ControlSubsystem/machines"/>
+      </referenceInstances>
+    </classInstances>
+    <classInstances>
+      <role href="platform:/resource/WT/patterns/repository.dslpatterns#//@categories.4/@patterns.0/@rootVariant/@andChildren.0/@metaModel/@classInterfaces.2"/>
+      <element href="WindTurbines.ecore#//StateMachine"/>
+      <featureInstances xsi:type="rtpat:InstanceFeatureRoleInstance" value="state">
+        <role xsi:type="dslpat:FeatureInstance" href="platform:/resource/WT/patterns/repository.dslpatterns#//@categories.4/@patterns.0/@rootVariant/@andChildren.0/@metaModel/@attrInterfaces.3"/>
+      </featureInstances>
+      <featureInstances xsi:type="rtpat:InstanceFeatureRoleInstance" value="icons/StateMachine.png">
+        <role xsi:type="dslpat:FeatureInstance" href="platform:/resource/WT/patterns/repository.dslpatterns#//@categories.4/@patterns.0/@rootVariant/@andChildren.0/@metaModel/@attrInterfaces.4"/>
+      </featureInstances>
+      <featureInstances xsi:type="rtpat:TypeFeatureRoleInstance">
+        <role href="platform:/resource/WT/patterns/repository.dslpatterns#//@categories.4/@patterns.0/@rootVariant/@andChildren.0/@metaModel/@attrInterfaces.2"/>
+        <element href="WindTurbines.ecore#//StateMachine/name"/>
+      </featureInstances>
+    </classInstances>
+    <serviceInstances>
+      <service href="platform:/resource/WT/patterns/repository.dslpatterns#//@categories.4/@patterns.0/@services.0"/>
+    </serviceInstances>
+  </appliedPatterns>
+  <appliedPatterns ident="Filter">
+    <pattern href="platform:/resource/WT/patterns/repository.dslpatterns#//@categories.4/@patterns.1"/>
+    <classInstances>
+      <role href="platform:/resource/WT/patterns/repository.dslpatterns#//@categories.4/@patterns.1/@rootVariant/@andChildren.0/@metaModel/@classInterfaces.0"/>
+      <element href="WindTurbines.ecore#//SimpleState"/>
+      <featureInstances xsi:type="rtpat:TypeFeatureRoleInstance">
+        <role href="platform:/resource/WT/patterns/repository.dslpatterns#//@categories.4/@patterns.1/@rootVariant/@andChildren.0/@metaModel/@attrInterfaces.0"/>
+        <element href="WindTurbines.ecore#//DocumElt/name"/>
+      </featureInstances>
+      <referenceInstances>
+        <role href="platform:/resource/WT/patterns/repository.dslpatterns#//@categories.4/@patterns.1/@rootVariant/@andChildren.0/@metaModel/@refInterfaces.0"/>
+        <element href="WindTurbines.ecore#//Vertex/incoming"/>
+      </referenceInstances>
+    </classInstances>
+    <serviceInstances activated="true">
+      <service href="platform:/resource/WT/patterns/repository.dslpatterns#//@categories.4/@patterns.1/@services.0"/>
+      <disconnectedElements>
+        <interface xsi:type="servInt_modelingenv:SlotPlugInterfaceL0" href="platform:/resource/WT/patterns/interfaces.serviceInterfaces#//@contents.0/@contents.0"/>
+        <patterns href="platform:/resource/WT/patterns/repository.dslpatterns#//@categories.4/@patterns.0"/>
+      </disconnectedElements>
+      <disconnectedElements>
+        <interface xsi:type="servInt_modelingenv:InjectorAcceptorInterfaceL0" href="platform:/resource/WT/patterns/interfaces.serviceInterfaces#//@contents.0/@contents.1"/>
+        <patterns href="platform:/resource/WT/patterns/repository.dslpatterns#//@categories.4/@patterns.0"/>
+      </disconnectedElements>
+    </serviceInstances>
+  </appliedPatterns>
+</rtpat:PatternInstances>

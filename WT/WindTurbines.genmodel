@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/WT/src" modelPluginID="WT" modelName="WindTurbines" containmentProxies="true" complianceLevel="7.0" copyrightFields="false">
+  <foreignModel>WindTurbines.ecore</foreignModel>
+  <genPackages prefix="dslComponent" disposableProviderFactory="true">
+    <ecorePackage href="file:/D:/workspace_runtime/runtime_mondov01/WT/WindTurbines.ecore#/"/>
+    <genClasses>
+      <ecoreClass href="file:/D:/workspace_runtime/runtime_mondov01/WT/WindTurbines.ecore#//WTComponents"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="file:/D:/workspace_runtime/runtime_mondov01/WT/WindTurbines.ecore#//WTComponents/id"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="file:/D:/workspace_runtime/runtime_mondov01/WT/WindTurbines.ecore#//WTComponents/author"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="file:/D:/workspace_runtime/runtime_mondov01/WT/WindTurbines.ecore#//WTComponents/subsystems"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="file:/D:/workspace_runtime/runtime_mondov01/WT/WindTurbines.ecore#//Subsystem"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="file:/D:/workspace_runtime/runtime_mondov01/WT/WindTurbines.ecore#//Subsystem/name"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="file:/D:/workspace_runtime/runtime_mondov01/WT/WindTurbines.ecore#//Subsystem/description"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="file:/D:/workspace_runtime/runtime_mondov01/WT/WindTurbines.ecore#//Subsystem/beh"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="file:/D:/workspace_runtime/runtime_mondov01/WT/WindTurbines.ecore#//Subsystem/components"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="file:/D:/workspace_runtime/runtime_mondov01/WT/WindTurbines.ecore#//Subsystem/subsystems"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="file:/D:/workspace_runtime/runtime_mondov01/WT/WindTurbines.ecore#//Component"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="file:/D:/workspace_runtime/runtime_mondov01/WT/WindTurbines.ecore#//Component/id"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="file:/D:/workspace_runtime/runtime_mondov01/WT/WindTurbines.ecore#//Component/name"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="file:/D:/workspace_runtime/runtime_mondov01/WT/WindTurbines.ecore#//Component/ports"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="file:/D:/workspace_runtime/runtime_mondov01/WT/WindTurbines.ecore#//Component/machines"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="file:/D:/workspace_runtime/runtime_mondov01/WT/WindTurbines.ecore#//StateMachine"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="file:/D:/workspace_runtime/runtime_mondov01/WT/WindTurbines.ecore#//StateMachine/name"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="file:/D:/workspace_runtime/runtime_mondov01/WT/WindTurbines.ecore#//StateMachine/states"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="file:/D:/workspace_runtime/runtime_mondov01/WT/WindTurbines.ecore#//StateMachine/transitions"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="file:/D:/workspace_runtime/runtime_mondov01/WT/WindTurbines.ecore#//Vertex"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="file:/D:/workspace_runtime/runtime_mondov01/WT/WindTurbines.ecore#//Vertex/outgoing"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="file:/D:/workspace_runtime/runtime_mondov01/WT/WindTurbines.ecore#//Vertex/incoming"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="file:/D:/workspace_runtime/runtime_mondov01/WT/WindTurbines.ecore#//Edge"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="file:/D:/workspace_runtime/runtime_mondov01/WT/WindTurbines.ecore#//Edge/source"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="file:/D:/workspace_runtime/runtime_mondov01/WT/WindTurbines.ecore#//Edge/target"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="file:/D:/workspace_runtime/runtime_mondov01/WT/WindTurbines.ecore#//SimpleState"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="file:/D:/workspace_runtime/runtime_mondov01/WT/WindTurbines.ecore#//InitialState"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="file:/D:/workspace_runtime/runtime_mondov01/WT/WindTurbines.ecore#//ControlSubsystem"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="file:/D:/workspace_runtime/runtime_mondov01/WT/WindTurbines.ecore#//ControlSubsystem/name"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="file:/D:/workspace_runtime/runtime_mondov01/WT/WindTurbines.ecore#//ControlSubsystem/machines"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="file:/D:/workspace_runtime/runtime_mondov01/WT/WindTurbines.ecore#//DocumElt"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="file:/D:/workspace_runtime/runtime_mondov01/WT/WindTurbines.ecore#//DocumElt/name"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="file:/D:/workspace_runtime/runtime_mondov01/WT/WindTurbines.ecore#//DocumElt/desc"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="file:/D:/workspace_runtime/runtime_mondov01/WT/WindTurbines.ecore#//Port"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="file:/D:/workspace_runtime/runtime_mondov01/WT/WindTurbines.ecore#//Port/name"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="file:/D:/workspace_runtime/runtime_mondov01/WT/WindTurbines.ecore#//InPort"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="file:/D:/workspace_runtime/runtime_mondov01/WT/WindTurbines.ecore#//OutPort"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

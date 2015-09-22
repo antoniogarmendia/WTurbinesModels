@@ -1,0 +1,229 @@
+<plugin>
+   <extension
+         point="org.eclipse.ui.newWizards">
+	  <!-- PROJECT CATEGORY -->
+      <category
+            id="WT.projectWTComponents"
+            name="WTComponents">
+      </category>
+	  <!-- PACKAGE CATEGORY -->	
+	<category
+            id="WT.projectWTComponents.Packages"
+            name="WTComponents Folders"
+			parentCategory="WT.projectWTComponents">
+      </category> 
+	  <!-- FILE CATEGORY -->
+	  <category
+            id="WT.projectWTComponents.Files"
+            name="WTComponents Files"
+			parentCategory="WT.projectWTComponents">
+      </category>	  
+     <wizard
+            category="WT.projectWTComponents"
+            class="wt.modular.wizard.WTComponentsNewProjectWizard"
+            id="WT.wtcomponents.WTComponentsNewProject"
+            name="WTComponents Project"
+            project="true"
+			icon="icons/Project.png">
+      </wizard>
+	<!--WIZARD PACKAGE CATEGORY -->
+	 <wizard
+			category="WT.projectWTComponents/WT.projectWTComponents.Packages"
+			icon="icons/Subsystem.png"
+			class="wt.modular.wizard.folder.SubsystemCreateFolderWizard"
+			name="Subsystem Folder"
+			id="WT.subsystem.subsystemNewPackage"
+			project="false"
+	 		>	
+	 </wizard>
+	 <wizard
+			category="WT.projectWTComponents/WT.projectWTComponents.Packages"
+			icon="icons/ControlSubsystem.png"
+			class="wt.modular.wizard.folder.ControlSubsystemCreateFolderWizard"
+			name="ControlSubsystem Folder"
+			id="WT.controlsubsystem.controlsubsystemNewPackage"
+			project="false"
+	 		>	
+	 </wizard>
+	<!--WIZARD FILE CATEGORY -->
+	  <wizard
+			category="WT.projectWTComponents/WT.projectWTComponents.Files"
+			icon="icons/Component.png"
+			class="wt.modular.wizard.file.ComponentCreateFileWizard"
+			name="Component File"
+			id="WT.component.componentNewFile"
+			project="false"
+	 		>	
+	 </wizard>		
+	  <wizard
+			category="WT.projectWTComponents/WT.projectWTComponents.Files"
+			icon="icons/StateMachine.png"
+			class="wt.modular.wizard.file.StateMachineCreateFileWizard"
+			name="StateMachine File"
+			id="WT.statemachine.statemachineNewFile"
+			project="false"
+	 		>	
+	 </wizard>		
+   </extension>
+   <!--MULTI-PAGE EDITOR PAGE EXTENSION-->  
+	<extension
+         point="org.eclipse.ui.editors"> 
+	<editor
+		name = "Figcom  Model Editor"
+		extensions = "figcom"
+		icon = "icons/Component.png"	
+		contributorClass="wt.modular.editors.MultiPageEditorContributor"
+		class = "wt.modular.editors.MultiPageEditor"
+		id="WT.projectwtcomponents.editors.FigureEditor"
+		default="true">
+	</editor>
+	<editor
+		name = "State  Model Editor"
+		extensions = "state"
+		icon = "icons/StateMachine.png"	
+		contributorClass="wt.modular.editors.MultiPageEditorContributor"
+		class = "wt.modular.editors.MultiPageEditor"
+		id="WT.projectwtcomponents.editors.FigureEditor"
+		default="true">
+	</editor>
+	</extension>
+	<!--PROJECT MODULAR NATURE-->
+   <extension
+         id="ModularNature"
+         name="Modular Nature"
+         point="org.eclipse.core.resources.natures">
+         <runtime>
+        	 <run class="wt.modular.wizard.WTComponentsNewProjectNature">
+         </run>
+      </runtime>
+   </extension>
+   <extension
+         point="org.eclipse.ui.ide.projectNatureImages">
+         <image
+            icon="icons/Project.png"
+            id="WTwtcomponents.image.Folder"
+            natureId="WT.modular.ModularNature">
+      </image>
+   </extension> 
+   <!-- PROJECT DECORATOR -->
+	<extension
+         point="org.eclipse.ui.decorators">
+      <decorator 
+       	adaptable="true"
+            icon="icons/Project.png"
+            id="resources.folder.decorator"
+            label="Folder Resource Decorator"
+            lightweight="true"
+            location="REPLACE"
+            state="true"
+            objectClass="org.eclipse.core.resources.IResource"
+            class="wt.modular.decorator.ModularProjectDecorator">
+      </decorator>
+   </extension> 
+    <!-- PROPERTIES VIEW-->
+   <extension
+		point = "org.eclipse.jdt.ui.javaElementFilters" >
+		<filter
+            class="wt.modular.Package_Explorer_Selection"
+            description="Package_Explorer_Selection"
+            enabled="true"
+            id="WT.filter"
+            name="Selection_Package"
+            targetId="org.eclipse.jdt.ui.PackageExplorer">
+      </filter>
+   </extension>
+	<!-- POPUPMENUS FOR THE PROJECT-->
+	 <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.jdt.ui.PackageExplorer?after=group.new">
+         <menu
+               id="WT.wtcomponents.Menu"
+               label="WTComponents"
+               mnemonic="L">
+            <command
+                  commandId="WT.modular.command.gendiag"
+                  id="WT.modular.gendiag"
+                  label="Generate Model"
+                  mnemonic="L"
+                  style="push">
+            </command>
+            <visibleWhen
+                  checkEnabled="true">
+            	 <with
+                     variable="activeMenuSelection">
+                  <iterate
+                        operator="and">
+                     <test
+                           property="org.eclipse.core.resources.projectNature"
+                           value="WT.modular.ModularNature">
+                     </test>
+                  </iterate>
+                  <count
+                        value="1">
+                  </count>
+               </with>
+            </visibleWhen>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            allPopups="true"
+            class="wt.modular.CreateMenu"
+            locationURI="popup:org.eclipse.jdt.ui.PackageExplorer?after=group.new">
+         <menu
+               id="New"
+               label="New WTComponents"
+               mnemonic="L">
+            <visibleWhen
+                  checkEnabled="true">
+               <with
+                     variable="activeMenuSelection">
+                  <count
+                        value="1">
+                  </count>
+                  <iterate
+                        operator="and">
+                     <test
+                           property="org.eclipse.core.resources.projectNature"
+                           value="WT.modular.ModularNature">
+                     </test>
+                  </iterate>
+               </with>
+            </visibleWhen>
+         </menu>        
+      </menuContribution>
+   </extension>	
+	<!-- COMMANDS-->
+	 <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="WT.modular.command.gendiag"
+            name="Generate Model">
+      </command>     
+   </extension>
+   <!-- HANDLERS-->
+	<extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="wt.modular.actions.Generate_Diagram"
+            commandId="WT.modular.command.gendiag">
+      </handler>     
+   </extension>
+ <extension
+       point="org.eclipse.ui.views">
+    <view
+          allowMultiple="false"
+          category="WT.modular.category1"
+          class="wt.modular.editors.FilterView"
+          icon="icons/sample.gif"
+          id="WT.modular.view1"
+          name="Filter View"
+          restorable="true">
+    </view>
+    <category
+          id="WT.modular.category1"
+          name="name">
+    </category>
+ </extension>
+</plugin> 	

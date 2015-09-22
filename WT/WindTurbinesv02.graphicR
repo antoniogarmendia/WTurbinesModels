@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="ASCII"?>
+<graphicR:GraphicRepresentation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:graphicR="http://mondo.org/graphic_representation/1.0" name="WindTurbines">
+  <allGraphicRepresentation>
+    <elements xsi:type="graphicR:Node">
+      <anEClass href="WindTurbines.ecore#//Component"/>
+      <diag_palette palette_name="Component"/>
+      <containerReference href="WindTurbines.ecore#//Subsystem/components"/>
+      <node_elements xsi:type="graphicR:Link">
+        <anEReference href="WindTurbines.ecore#//Component/ports"/>
+      </node_elements>
+      <node_elements xsi:type="graphicR:Compartment">
+        <anEReference href="WindTurbines.ecore#//Component/ports"/>
+      </node_elements>
+      <node_elements xsi:type="graphicR:Label">
+        <anEAttribute href="WindTurbines.ecore#//Component/id"/>
+      </node_elements>
+    </elements>
+    <elements xsi:type="graphicR:Node">
+      <anEClass href="WindTurbines.ecore#//StateMachine"/>
+      <diag_palette palette_name="StateMachine"/>
+      <containerReference href="WindTurbines.ecore#//ControlSubsystem/machines"/>
+      <node_elements xsi:type="graphicR:Link">
+        <anEReference href="WindTurbines.ecore#//StateMachine/states"/>
+        <anEReference href="WindTurbines.ecore#//StateMachine/transitions"/>
+      </node_elements>
+      <node_elements xsi:type="graphicR:Compartment">
+        <anEReference href="WindTurbines.ecore#//StateMachine/states"/>
+        <anEReference href="WindTurbines.ecore#//StateMachine/transitions"/>
+      </node_elements>
+      <node_elements xsi:type="graphicR:Label">
+        <anEAttribute href="WindTurbines.ecore#//StateMachine/name"/>
+      </node_elements>
+    </elements>
+    <elements xsi:type="graphicR:Edge">
+      <anEClass href="WindTurbines.ecore#//Edge"/>
+      <diag_palette palette_name="Edge"/>
+      <containerReference href="WindTurbines.ecore#//StateMachine/transitions"/>
+      <directions sourceDiagramElement="//@allGraphicRepresentation.0/@elements.3 //@allGraphicRepresentation.0/@elements.4" targetDiagramElement="//@allGraphicRepresentation.0/@elements.3 //@allGraphicRepresentation.0/@elements.4">
+        <source href="WindTurbines.ecore#//Edge/source"/>
+        <target href="WindTurbines.ecore#//Edge/target"/>
+      </directions>
+    </elements>
+    <elements xsi:type="graphicR:Node">
+      <anEClass href="WindTurbines.ecore#//SimpleState"/>
+      <diag_palette palette_name="SimpleState"/>
+      <containerReference href="WindTurbines.ecore#//StateMachine/states"/>
+      <node_elements xsi:type="graphicR:Link"/>
+      <node_elements xsi:type="graphicR:Compartment"/>
+      <node_elements xsi:type="graphicR:Label">
+        <anEAttribute href="WindTurbines.ecore#//DocumElt/name"/>
+      </node_elements>
+      <node_shape xsi:type="graphicR:Ellipse" horizontalDiameter="5" verticalDiameter="5"/>
+    </elements>
+    <elements xsi:type="graphicR:Node">
+      <anEClass href="WindTurbines.ecore#//InitialState"/>
+      <diag_palette palette_name="InitialState"/>
+      <containerReference href="WindTurbines.ecore#//StateMachine/states"/>
+      <node_elements xsi:type="graphicR:Link"/>
+      <node_elements xsi:type="graphicR:Compartment"/>
+      <node_elements xsi:type="graphicR:Label">
+        <anEAttribute href="WindTurbines.ecore#//DocumElt/name"/>
+      </node_elements>
+      <node_shape xsi:type="graphicR:Rectangle" width="3" height="3"/>
+    </elements>
+    <elements xsi:type="graphicR:Node">
+      <anEClass href="WindTurbines.ecore#//ControlSubsystem"/>
+      <diag_palette palette_name="ControlSubsystem"/>
+      <containerReference href="WindTurbines.ecore#//Subsystem/beh"/>
+      <node_elements xsi:type="graphicR:Link">
+        <anEReference href="WindTurbines.ecore#//ControlSubsystem/machines"/>
+      </node_elements>
+      <node_elements xsi:type="graphicR:Compartment">
+        <anEReference href="WindTurbines.ecore#//ControlSubsystem/machines"/>
+      </node_elements>
+      <node_elements xsi:type="graphicR:Label">
+        <anEAttribute href="WindTurbines.ecore#//ControlSubsystem/name"/>
+      </node_elements>
+    </elements>
+    <elements xsi:type="graphicR:Node">
+      <anEClass href="WindTurbines.ecore#//InPort"/>
+      <diag_palette palette_name="InPort"/>
+      <containerReference href="WindTurbines.ecore#//Component/ports"/>
+      <node_elements xsi:type="graphicR:Link"/>
+      <node_elements xsi:type="graphicR:Compartment"/>
+      <node_elements xsi:type="graphicR:Label">
+        <anEAttribute href="WindTurbines.ecore#//Port/name"/>
+      </node_elements>
+    </elements>
+    <elements xsi:type="graphicR:Node">
+      <anEClass href="WindTurbines.ecore#//OutPort"/>
+      <diag_palette palette_name="OutPort"/>
+      <containerReference href="WindTurbines.ecore#//Component/ports"/>
+      <node_elements xsi:type="graphicR:Link"/>
+      <node_elements xsi:type="graphicR:Compartment"/>
+      <node_elements xsi:type="graphicR:Label">
+        <anEAttribute href="WindTurbines.ecore#//Port/name"/>
+      </node_elements>
+    </elements>
+    <root>
+      <anEClass href="WindTurbines.ecore#//Subsystem"/>
+    </root>
+  </allGraphicRepresentation>
+</graphicR:GraphicRepresentation>
